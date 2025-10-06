@@ -1,3 +1,4 @@
+using StarterAssets;
 using UnityEngine;
 
 public class Pause : GameState
@@ -24,6 +25,6 @@ public class Pause : GameState
         this.GetComponent<Canvas>().enabled = active;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Camera.main.enabled = true;
+        
     }
 }
