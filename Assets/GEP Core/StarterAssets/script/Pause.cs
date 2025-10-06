@@ -20,8 +20,10 @@ public class Pause : GameState
     public override void ChangeState()
     {
         Time.timeScale = 0.0f;
-        this.GetComponent<Canvas>().enabled = active;
         setActive(true);
-       
+        this.GetComponent<Canvas>().enabled = active;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Camera.main.enabled = true;
     }
 }

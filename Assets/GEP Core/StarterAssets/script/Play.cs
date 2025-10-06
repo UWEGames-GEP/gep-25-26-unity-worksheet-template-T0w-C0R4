@@ -17,5 +17,8 @@ public class Play : GameState
     {
         Time.timeScale = 1.0f;
         setActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Camera.main.enabled = true;
     }
 }
