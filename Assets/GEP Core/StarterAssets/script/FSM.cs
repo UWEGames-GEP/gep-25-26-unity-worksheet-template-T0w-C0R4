@@ -5,6 +5,7 @@ public class FSM : MonoBehaviour
 {
     public Play play;
     public Pause pause;
+    public Inventory inventory;
     public ThirdPersonController thirdPersonController;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,8 +23,19 @@ public class FSM : MonoBehaviour
             play.setActive(false);
             thirdPersonController.LockCameraPosition = true;
         }
+
+        if (Input.GetKeyDown(KeyCode.Q) && !inventory.active)
+        {
+            Inventory();
+        }
     }
 
+    public void Inventory()
+    {
+        inventory.ChangeState();
+        play.setActive(false);
+        thirdPersonController.LockCameraPosition = true;
+    }
     public void Resume()
     {
         play.ChangeState();
