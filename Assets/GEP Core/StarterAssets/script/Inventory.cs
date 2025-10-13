@@ -2,7 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 public class Inventory : GameState
 {
-    public List<string> items = new List<string>();
+    public string equiped;
+    public string[] items = new string[4];
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,8 +15,10 @@ public class Inventory : GameState
     {
         if (!active)
         {
-            this.GetComponent<Canvas>().enabled = active;
+            this.GetComponent<Canvas>().enabled = active; //active is the current state
         }
+
+
     }
 
     public override void ChangeState()
@@ -23,15 +26,35 @@ public class Inventory : GameState
         Time.timeScale = 0.1f;
         setActive(true);
         this.GetComponent<Canvas>().enabled = active;
+         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
-    public void Remove(string item) 
+    public void Remove() 
     {
-        items.Remove(item);
+        for (int i = 0; i < 3; i++)
+        {
+            items[i] = items[i+1];
+        }
+        
     }
     public void Add(string item) 
     {
-        items.Add(item);
+        if (items[4] != null)
+        {
+            Remove();
+            items[4] = item;
+        }
+        else 
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (items[i] == null)
+                {
+                    items[i] = item;
+                    break;
+                }
+            }
+        }
     }
 }

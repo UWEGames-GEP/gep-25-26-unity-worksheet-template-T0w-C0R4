@@ -11,7 +11,8 @@ public class FSM : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        SetAllInactive();
+        Resume();
     }
 
     // Update is called once per frame
@@ -19,27 +20,31 @@ public class FSM : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape) && !pause.active)
         {
+            SetAllInactive();
             pause.ChangeState();
-            play.setActive(false);
             thirdPersonController.LockCameraPosition = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && !inventory.active)
         {
+            SetAllInactive();
             Inventory();
+        }
+        else if (Input.GetKeyUp(KeyCode.Q) && inventory.active)
+        {
+            Resume();
         }
     }
 
     public void Inventory()
     {
         inventory.ChangeState();
-        play.setActive(false);
         thirdPersonController.LockCameraPosition = true;
     }
     public void Resume()
     {
+        SetAllInactive();
         play.ChangeState();
-        pause.setActive(false);
         thirdPersonController.LockCameraPosition = false;
 
     }
@@ -51,6 +56,13 @@ public class FSM : MonoBehaviour
     public void MenueQuit()//ends runtime
     {
         Application.Quit();
+    }
+    
+    public void SetAllInactive()
+    {
+        play.setActive(false);
+        pause.setActive(false);
+        inventory.setActive(false);
     }
     //hide everything
     /*
