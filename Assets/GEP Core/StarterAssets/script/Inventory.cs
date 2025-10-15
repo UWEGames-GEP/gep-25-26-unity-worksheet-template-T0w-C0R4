@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 public class Inventory : GameState
 {
+    public FSM FSM;
     public string equiped;
-    public string[] items = new string[4];
+    private string[] items = new string[4];
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -56,5 +58,13 @@ public class Inventory : GameState
                 }
             }
         }
+    }
+
+    public void EquipItem(int inventry_no)
+    {
+        equiped = items[inventry_no];
+        Debug.Log($"equipped items is {inventry_no}");
+
+        FSM.Resume();
     }
 }

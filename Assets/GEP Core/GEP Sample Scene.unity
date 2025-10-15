@@ -152,8 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+  FSM: {fileID: 18419234}
   equiped: 
-  items: []
 --- !u!114 &4409506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,10 +1590,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 18419234}
-        m_TargetAssemblyTypeName: FSM, Assembly-CSharp
-        m_MethodName: Resume
-        m_Mode: 1
+      - m_Target: {fileID: 4409505}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: EquipItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2106,14 +2106,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 18419234}
-        m_TargetAssemblyTypeName: FSM, Assembly-CSharp
-        m_MethodName: Resume
-        m_Mode: 1
+      - m_Target: {fileID: 4409505}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: EquipItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2372,14 +2372,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 18419234}
-        m_TargetAssemblyTypeName: FSM, Assembly-CSharp
-        m_MethodName: Resume
-        m_Mode: 1
+      - m_Target: {fileID: 4409505}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: EquipItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2772,14 +2772,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 18419234}
-        m_TargetAssemblyTypeName: FSM, Assembly-CSharp
-        m_MethodName: Resume
-        m_Mode: 1
+      - m_Target: {fileID: 4409505}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: EquipItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3593,15 +3593,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 815722156541081795, guid: 274dd8838f0621647b1ac0c388be3bcd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.06441
+      value: 0.62
       objectReference: {fileID: 0}
     - target: {fileID: 815722156541081795, guid: 274dd8838f0621647b1ac0c388be3bcd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.87
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 815722156541081795, guid: 274dd8838f0621647b1ac0c388be3bcd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.94293
+      value: 6.66
       objectReference: {fileID: 0}
     - target: {fileID: 815722156541081795, guid: 274dd8838f0621647b1ac0c388be3bcd, type: 3}
       propertyPath: m_LocalRotation.w
