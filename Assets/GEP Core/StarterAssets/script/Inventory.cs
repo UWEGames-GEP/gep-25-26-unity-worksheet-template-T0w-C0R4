@@ -5,11 +5,15 @@ public class Inventory : GameState
 {
     public FSM FSM;
     public string equiped;
-    private string[] items = new string[4];
+    public changetext changetext;
+    [SerializeField] private List<string> items = new List<string>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        for (int i = 0; i < 4; i++)
+        {
+            items.Add("0");
+        }
     }
 
     // Update is called once per frame
@@ -42,18 +46,19 @@ public class Inventory : GameState
     }
     public void Add(string item) 
     {
-        if (items[4] != null)
+        if (items[3] != "0")
         {
             Remove();
-            items[4] = item;
+            items[3] = item;
         }
         else 
         {
             for (int i = 0; i < 4; i++)
             {
-                if (items[i] == null)
+                if (items[i] == "0")
                 {
                     items[i] = item;
+                    changetext.changeText(i);
                     break;
                 }
             }
@@ -63,8 +68,13 @@ public class Inventory : GameState
     public void EquipItem(int inventry_no)
     {
         equiped = items[inventry_no];
-        Debug.Log($"equipped items is {inventry_no}");
+        Debug.Log($"equipped items is {items[inventry_no]}");
 
         FSM.Resume();
+    }
+
+    public string GetItem(int inventry_no) 
+    {
+        return items[inventry_no]; 
     }
 }
