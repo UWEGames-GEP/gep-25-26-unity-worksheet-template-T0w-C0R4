@@ -154,8 +154,12 @@ MonoBehaviour:
   active: 0
   FSM: {fileID: 18419234}
   equiped: 
-  changetext: {fileID: 1614866714}
   items: []
+  inventory_text:
+  - {fileID: 1614866714}
+  - {fileID: 1663155489}
+  - {fileID: 651410755}
+  - {fileID: 1111269344}
 --- !u!114 &4409506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,7 +1547,7 @@ GameObject:
   - component: {fileID: 1050430541}
   - component: {fileID: 1050430540}
   - component: {fileID: 1050430542}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3747,7 +3751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1617473336289112812, guid: 01d214f818620eb49af62d6b0968d83a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.691
+      value: 12.58
       objectReference: {fileID: 0}
     - target: {fileID: 1617473336289112812, guid: 01d214f818620eb49af62d6b0968d83a, type: 3}
       propertyPath: m_LocalRotation.w

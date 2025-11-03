@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using TMPro;
 public class Inventory : GameState
 {
     public FSM FSM;
     public string equiped;
-    public changetext changetext;
     [SerializeField] private List<string> items = new List<string>();
+    public List<changetext> inventory_text;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -58,7 +59,7 @@ public class Inventory : GameState
                 if (items[i] == "0")
                 {
                     items[i] = item;
-                    changetext.changeText(i);
+                    inventory_text[i].changeText(GetItem(i));
                     break;
                 }
             }

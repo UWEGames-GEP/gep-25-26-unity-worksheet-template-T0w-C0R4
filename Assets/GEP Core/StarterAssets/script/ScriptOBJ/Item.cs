@@ -26,6 +26,8 @@ public class Item : MonoBehaviour
         {
             GameObject currentEntity= Instantiate(entity_to_spawn, Interractiveobjects_Value.SpawnPoint[current_Spawnpoint_Index],Quaternion.identity);
 
+            currentEntity.layer = Interractiveobjects_Value.set_layer;
+
             currentEntity.name = Interractiveobjects_Value.prefab_name + instance_number;
 
             current_Spawnpoint_Index = (current_Spawnpoint_Index + 1 ) % Interractiveobjects_Value.SpawnPoint.Length;

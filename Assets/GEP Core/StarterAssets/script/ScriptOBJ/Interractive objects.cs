@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class Interractiveobjects : ScriptableObject
 {
     public string prefab_name;
-
+    public int set_layer = 3;
     public int numberOfPrefabsToCreate;
     public Vector3[] SpawnPoint;
 }

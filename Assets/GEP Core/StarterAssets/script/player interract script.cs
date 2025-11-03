@@ -18,7 +18,7 @@ public class playerinterractscript : MonoBehaviour
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit != null && hit.gameObject.name == "Sphere1")
+        if (hit != null && hit.gameObject.layer == 3)
         {
             string item_name = hit.gameObject.name;
 
