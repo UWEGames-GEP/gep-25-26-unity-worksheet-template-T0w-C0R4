@@ -22,7 +22,8 @@ public class playerinterractscript : MonoBehaviour
         {
             string item_name = hit.gameObject.name;
 
-            inventory.Add(item_name);
+            inventory.Add(item_name,hit.gameObject);
+            hit.gameObject.transform.position = new Vector3(0, -1, 0);
             hit.gameObject.SetActive(false);
             
         }

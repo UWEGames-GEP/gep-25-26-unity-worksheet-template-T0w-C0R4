@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: square
   m_EditorClassIdentifier: 
   prefab_name: Square
+  set_layer: 3
   numberOfPrefabsToCreate: 1
   SpawnPoint:
   - {x: 4.06, y: 6.5, z: 8.691}
+  - {x: 0, y: 0, z: 0}

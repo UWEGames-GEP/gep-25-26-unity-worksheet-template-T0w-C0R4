@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: circle
   m_EditorClassIdentifier: 
   prefab_name: Sphere
+  set_layer: 3
   numberOfPrefabsToCreate: 1
   SpawnPoint:
   - {x: 0.62, y: 0.7, z: 6.66}
+  - {x: 0, y: 0, z: 0}

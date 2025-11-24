@@ -8,12 +8,15 @@ public class Inventory : GameState
     public string equiped;
     [SerializeField] private List<string> items = new List<string>();
     public List<changetext> inventory_text;
+    public List<GameObject> Items;
+    public GameObject player_ref;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         for (int i = 0; i < 4; i++)
         {
             items.Add("0");
+            Items.Add(null);
         }
     }
 
@@ -37,39 +40,41 @@ public class Inventory : GameState
         Cursor.visible = true;
     }
 
-    public void Remove() 
+    public void Remove(int i) 
     {
-        for (int i = 0; i < 3; i++)
-        {
-            items[i] = items[i+1];
-        }
-        
+
+            items[i] = "0";
+        Items[i] = null;
+        inventory_text[i].changeText($"item{i}");
+
+
     }
-    public void Add(string item) 
+    public void Add(string item, GameObject added_item) 
     {
-        if (items[3] != "0")
-        {
-            Remove();
-            items[3] = item;
-        }
-        else 
-        {
+
             for (int i = 0; i < 4; i++)
             {
                 if (items[i] == "0")
                 {
                     items[i] = item;
+                    Items[i] = added_item;
                     inventory_text[i].changeText(GetItem(i));
                     break;
                 }
             }
-        }
     }
 
-    public void EquipItem(int inventry_no)
+    public void droppItem(int inventry_no)
     {
+        Vector3 vector3 = new Vector3(player_ref.transform.position.x+1, player_ref.transform.position.y, player_ref.transform.position.z);
         equiped = items[inventry_no];
-        Debug.Log($"equipped items is {items[inventry_no]}");
+        Debug.Log($"drop items is {items[inventry_no]}");
+        //create instance of object 4 meters away from character
+        Items[inventry_no].gameObject.SetActive( true );
+        Items[inventry_no].gameObject.transform.position = vector3;
+
+        Remove(inventry_no);
+
 
         FSM.Resume();
     }
